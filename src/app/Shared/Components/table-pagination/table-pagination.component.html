@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="table-responsive" *ngIf="tabledata">
+      <table class="table table-bordered table-responsive-sm table-responsive-lg table-responsive-md table-responsive-xl table-sm text-nowrap">
+        <thead>
+          <tr>
+            <th *ngFor="let tableHead of getheader; trackBy: trackByFn">{{tableHead}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let gettableData of fetchdata;trackBy: trackByFn">
+            <td *ngFor="let tableHead of getheader;trackBy: trackByFn"> {{gettableData[tableHead]}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+</div>
