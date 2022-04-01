@@ -1,10 +1,8 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
-import { IQuotes } from 'src/app/Shared/Modals/review.model';
-import { ReviewService } from 'src/app/Shared/Services/review.service';
 import { ModalDirective } from 'angular-bootstrap-md';
+import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { ReviewService } from 'src/app/Shared/Services/review.service';
 import { now } from 'moment';
 
 @Component({
@@ -13,7 +11,6 @@ import { now } from 'moment';
   styleUrls: ['./quotes.component.scss']
 })
 export class QuotesComponent implements OnInit {
-  public QuoteModel: IQuotes = <IQuotes>{};
 
   public today: any;
   interval: any;

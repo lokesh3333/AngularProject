@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuotesComponent } from './quotes.component';
 import { MaterialModule } from 'src/app/material-module';
-import { SharedComponentsModule } from 'src/app/Shared/Components/sharedComponents.Module';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -16,7 +15,6 @@ import { QuotesRoutingModule } from './quotes-routing.module';
   imports: [
     CommonModule,
     MaterialModule,
-    SharedComponentsModule,
     FormsModule,
     MDBBootstrapModule,
     MatCheckboxModule,
