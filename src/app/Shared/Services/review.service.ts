@@ -13,26 +13,9 @@ export class ReviewService {
 
   constructor(private http: HttpClient) { }
 
-  /////////////////////////// Authorization ///////////////////////////
-
-
-
-  signUp = (AuthModel) => {
-    const url = `http://sad2fun.in/php/API/Authentication.php?input=signup&UserName=${AuthModel.UserName}&Email=${AuthModel.Email}&Password=${AuthModel.Password}&CreatedOn=${AuthModel.CreatedOn}&CreatedOn_Local=${AuthModel.CreatedOn_Local}&Timestamp=${AuthModel.Timestamp}&ReferralCode=${AuthModel.ReferralCode}&TimeZone=${AuthModel.TimeZone}&UTC=${AuthModel.UTC}`;
-    console.log(url);
-    return this.http.get(url, this.jwt()).pipe(map(x => x));
-  }
-
-
-
-      // 
-
-  // getWeather= () => {
-  //   const url = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${this.API}`;
-  //   return this.http.get(url, this.jwt()).pipe(map(x => x));
-  // }
-
   
+
+
 
   getWeather= () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?id=6167863&units=metric&appid=${this.API}`;

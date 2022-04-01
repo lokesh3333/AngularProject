@@ -1,11 +1,88 @@
+
 <div style="background-color: gainsboro;min-height:100%;" class="container-fluid">
+
   
-    {{ today | date: 'yyyy-MM-dd h:mm:ss' }}
- 
-<!--  2020-07-28 14:01:59  -->
+    <!-- Menu Start -->
+    <button class="btn btn-primary" *ngIf="!OpenSideNav" (click)="toggle()"
+      style="position: fixed;right: 2px;  background-color:greenyellow;z-index: 10;"> <i class="fa fa-list"
+        aria-hidden="true" matTooltip="Menu"></i>&nbsp;Menu</button>
+    <button class="btn btn-primary" (click)="toggle()" *ngIf="OpenSideNav"
+      style="position: fixed;right: 2px;  background-color:greenyellow;z-index: 10;"> <i class="fa fa-times"
+        aria-hidden="true" matTooltip="Menu"></i>&nbsp;Menu</button>
+    <div *ngIf="OpenSideNav"
+      style="position: fixed;right: 0px;height: 100%; width: 24em; background-color: rgb(202, 243, 250);z-index: 5;">
+      <br>
+      <table class="table table-bordered table-sm text-nowrap" cellsspacing="0" width="100%">
+        <tbody>
+          <tr>
+            <td (click)="changePage('Home')" class="tabledata"> <i class="fa fa-home" aria-hidden="true"></i>
+              &nbsp; Home</td>
+          </tr>
+          <tr *ngFor="let p of MenuItems;">
+            <td (click)="changePage(p)" class="tabledata">{{p}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Menu end -->
+  
+  
+    <div style="position: fixed;background-color: lightblue;color: blueviolet;width: 100%;top: 0px;position: fixed;
+      background-color: slategrey;color: aliceblue;width: 100%;top: 0px;text-align: center;height: 35px;font-family: inherit;
+      font-size: x-large; cursor: pointer;">
+      Angular
+    </div>
 
-<button (click)="getWeather()" > click  </button>
+    <div *ngIf="Page=='Home'" class="container">
+
+  <br><br><br>  <br><br><br>  
+  <h4>Present Date and Time :  {{ today | date: 'yyyy-MM-dd h:mm:ss' }}  </h4>  
+
+<br><br>
+
+
+<button class="btn btn-primary"   (click)="getWeather()" > Get Weather Data  </button>
 
 
 
+<br><br>
+<div *ngIf="Temp">
+<h2>  Toronto:  </h2> 
+<h4>
+Temperature : {{Temp}} <sup>o</sup>C <br>
+Feels like :   {{FeelTemp}} <sup>o</sup>C<br>
+Minimum Temperature : {{MinTemp}} <sup>o</sup>C<br>
+Maximum Temperature : {{MaxTemp}}  <sup>o</sup>C
+<br>
+</h4>
 </div>
+
+
+    </div>
+
+
+    <div *ngIf="Page=='About Us'" class="container-fluid">
+        <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
+          &nbsp;Back</button>
+        <h3 style="font-size: 20px;text-align: center;">About Us</h3>
+
+      </div>
+    
+    
+    
+      <div *ngIf="Page=='Our Services'" class="container-fluid">
+        <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
+          &nbsp;Back</button>
+        <h3 style="font-size: 20px;text-align: center;">Our Services</h3>
+    
+      </div>
+
+      <div *ngIf="Page=='Our Customers'" class="container-fluid">
+        <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
+          &nbsp;Back</button>
+        <h3 style="font-size: 20px;text-align: center;">Our Customers</h3>
+    
+      </div>
+   
+
+    </div>
