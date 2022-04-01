@@ -3,7 +3,8 @@
 
   <!-- Menu Start -->
   <button class="btn btn-primary" *ngIf="!OpenSideNav" (click)="toggle()"
-    style="position: fixed;right: 2px;  background-color:greenyellow;z-index: 10;"> <i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Menu</button>
+    style="position: fixed;right: 2px;  background-color:greenyellow;z-index: 10;"> <i class="fa fa-bars"
+      aria-hidden="true"></i>&nbsp;Menu</button>
   <button class="btn btn-primary" (click)="toggle()" *ngIf="OpenSideNav"
     style="position: fixed;right: 2px;  background-color:greenyellow;z-index: 10;"> <i class="fa fa-times"
       aria-hidden="true" matTooltip="Menu"></i>&nbsp;Menu</button>
@@ -28,7 +29,7 @@
   <div style="position: fixed;background-color: lightblue;color: blueviolet;width: 100%;top: 0px;position: fixed;
       background-color: slategrey;color: aliceblue;width: 100%;top: 0px;text-align: center;height: 35px;font-family: inherit;
       font-size: x-large; cursor: pointer;">
-    Angular
+    Weather
   </div>
 
   <div *ngIf="Page=='Home'" class="container">
@@ -60,8 +61,8 @@
 
 
   <div *ngIf="Page=='About Us'" class="container-fluid">
-    <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
-      &nbsp;Back</button>
+    <br><br>
+    <button (click)="Page='Home'" class="btn btn-info pull-right">&nbsp;Back</button>
     <h3 style="font-size: 20px;text-align: center;">About Us</h3>
 
   </div>
@@ -69,15 +70,15 @@
 
 
   <div *ngIf="Page=='Our Services'" class="container-fluid">
-    <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
-      &nbsp;Back</button>
+    <br><br>
+    <button (click)="Page='Home'" class="btn btn-info pull-right"> &nbsp;Back</button>
     <h3 style="font-size: 20px;text-align: center;">Our Services</h3>
 
   </div>
 
   <div *ngIf="Page=='Our Customers'" class="container-fluid">
-    <button (click)="Page='Home'" class="btn btn-info pull-right"><i class="fa fa-backward" aria-hidden="true"></i>
-      &nbsp;Back</button>
+    <br><br>
+    <button (click)="Page='Home'" class="btn btn-info pull-right"> &nbsp;Back</button>
     <h3 style="font-size: 20px;text-align: center;">Our Customers</h3>
 
   </div>
